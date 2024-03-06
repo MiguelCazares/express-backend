@@ -26,7 +26,7 @@ const createApp = (envs, prefix, routes, middlewares = []) => {
     console.log(`[+] Current PORT: '${PORT}'`);
 
     console.log('[*] Loaded Middlewares:');
-  
+
     middlewares.forEach((element) => {
       console.log(`[*] ${element.name}`);
     });
