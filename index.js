@@ -1,17 +1,20 @@
-const express = require('express');
-const routerApi = require('./src/routes/index');
+const { createApp, getApp } = require('./src/utils/createApp');
 const { errorHandler, logErrors } = require('./src/middlewares/errorHandler');
+const { 
+  ROOT_PATH, 
+  APP_ENV,
+  APP_NAME, 
+  PORT 
+} = require('./src/configs');
 
-const app = express();
-const port = 3000;
+const environment = { APP_ENV, PORT, APP_NAME };
+
+const routes = require('./src/routes.js');
+
 const middlewares = [logErrors, errorHandler];
 
-routerApi(app);
+const server = createApp(environment, ROOT_PATH, routes, middlewares);
 
-app.use(middlewares);
+const app = getApp();
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-
+module.exports = [app, server];
