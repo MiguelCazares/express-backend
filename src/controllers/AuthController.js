@@ -10,7 +10,7 @@ const login = async (req, res, next) => {
   }
 }
 
-const private = async (req, res, next) => {
+const getLinkUsers = async (req, res, next) => {
   try {
     return res.send('Private');
   } catch (err) {
@@ -20,5 +20,5 @@ const private = async (req, res, next) => {
 
 module.exports = {
   login,
-  private,
+  getLinkUsers,
 };

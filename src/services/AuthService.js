@@ -17,6 +17,15 @@ const login = async () => {
   }
 }
 
+const getLinkUsers = async (req, res, next) => {
+  try {
+    return res.send('Private');
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 module.exports = {
-  login
+  login,
+  getLinkUsers,
 };

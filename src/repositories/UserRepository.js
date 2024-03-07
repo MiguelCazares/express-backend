@@ -1,15 +1,15 @@
 const db = require('../utils/db');
 
 const { USERS_COLUMNS } = require('./columns');
-const { USER } = require('./tables');
+const { USERS } = require('./tables');
 
-const getUsers = async () => {
-  const query = db(USER)
-    .select(USERS_COLUMNS);
+const getLinkUsers = async () => {
+  const query = db.select(USERS_COLUMNS)
+    .from(USERS)
 
   return query;
 };
 
 module.exports = {
-  getUsers,
+  getLinkUsers,
 };

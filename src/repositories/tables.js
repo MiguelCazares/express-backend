@@ -1,3 +1,3 @@
 module.exports = {
-    USERS: 'users',
+    USERS: 'link_users',
 }
